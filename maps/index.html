@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Meu Mini GPS</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="cabecalho">
+
+    <div class="logo">
+        <span>📍</span>
+
+        <div>
+            <h1>Meu Mini GPS</h1>
+            <p>Localização em tempo real</p>
+        </div>
+    </div>
+
+    <div class="sinal">
+        <span class="bolinha"></span>
+        GPS ATIVO
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="introducao">
+
+        <div>
+            <span class="pequeno-titulo">
+                SISTEMA DE LOCALIZAÇÃO
+            </span>
+
+            <h2>
+                Descubra onde você está
+            </h2>
+
+            <p>
+                Clique no botão abaixo para obter sua localização
+                atual e visualizar sua posição no mapa.
+            </p>
+        </div>
+
+        <div class="icone-localizacao">
+            📍
+        </div>
+
+    </section>
+
+
+    <section class="gps-card">
+
+        <div class="titulo-secao">
+
+            <div class="icone-titulo">
+                📡
+            </div>
+
+            <div>
+                <h2>Localização atual</h2>
+                <p>Coordenadas do dispositivo</p>
+            </div>
+
+        </div>
+
+
+        <div id="status" class="status">
+            Clique em "Encontrar minha localização" para começar.
+        </div>
+
+
+        <div class="coordenadas">
+
+            <div class="coordenada">
+
+                <div class="icone-coordenada">
+                    ↕
+                </div>
+
+                <div>
+                    <span>LATITUDE</span>
+                    <strong id="latitude">--</strong>
+                </div>
+
+            </div>
+
+
+            <div class="coordenada">
+
+                <div class="icone-coordenada">
+                    ↔
+                </div>
+
+                <div>
+                    <span>LONGITUDE</span>
+                    <strong id="longitude">--</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="btn-localizacao"
+            class="botao-localizacao"
+        >
+            📍 Encontrar minha localização
+        </button>
+
+    </section>
+
+
+    <section class="salva-card">
+
+        <div class="titulo-secao">
+
+            <div class="icone-titulo">
+                💾
+            </div>
+
+            <div>
+                <h2>Última localização salva</h2>
+                <p>Dados armazenados no navegador</p>
+            </div>
+
+        </div>
+
+
+        <div class="mensagem-salva">
+
+            <span class="icone-memoria">
+                💾
+            </span>
+
+            <p id="ultima-localizacao">
+                Nenhuma localização salva ainda.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="mapa-card">
+
+        <div class="titulo-secao">
+
+            <div class="icone-titulo">
+                🗺️
+            </div>
+
+            <div>
+                <h2>Mapa da localização</h2>
+                <p>Visualização da sua posição</p>
+            </div>
+
+        </div>
+
+
+        <div class="controles-mapa">
+
+
+        </div>
+
+
+        <div id="mapa" class="mapa">
+
+            <div class="mapa-vazio">
+
+                <span>📍</span>
+
+                <h3>Aguardando localização</h3>
+
+                <p>
+                    Encontre sua localização para visualizar
+                    o mapa.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="desafio-card">
+
+        <div class="titulo-secao">
+
+            <div class="icone-titulo">
+                🧹
+            </div>
+
+            <div>
+                <h2>Desafio Drag and Drop</h2>
+                <p>Apague sua localização salva</p>
+            </div>
+
+        </div>
+
+
+        <div class="explicacao">
+
+            <span>💡</span>
+
+            <p>
+                Arraste o papel até a lixeira para apagar
+                as coordenadas salvas no localStorage.
+            </p>
+
+        </div>
+
+
+        <div class="area-arrastar">
+
+            <div
+                id="papel"
+                class="objeto-arrastar"
+                draggable="true"
+            >
+
+                <div class="emoji">
+                    📄
+                </div>
+
+                <strong>
+                    Localização
+                </strong>
+
+                <span>
+                    Arraste-me
+                </span>
+
+            </div>
+
+
+            <div class="linha-arrastar">
+                ➜
+            </div>
+
+
+            <div
+                id="lixeira"
+                class="objeto-lixeira"
+            >
+
+                <div class="emoji">
+                    🗑️
+                </div>
+
+                <strong>
+                    Lixeira
+                </strong>
+
+                <span>
+                    Solte aqui
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        📍 Mini GPS
+    </p>
+
+    <span>
+        Atividade de JavaScript • Geolocation • LocalStorage • Drag and Drop
+    </span>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoSkXb15s-q_iFF_1E5l1vRg5F_edyjcA&callback=iniciarMapa"
+    async
+    defer>
+</script>
+
+
+</body>
+
+</html>
